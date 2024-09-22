@@ -106,3 +106,62 @@ The **mark-and-sweep** algorithm is a way for JavaScript to clean up memory by r
 
 ## Conclusion
 The mark-and-sweep algorithm is an important part of how JavaScript manages memory, helping to keep applications running smoothly by cleaning up unused objects.
+
+# JavaScript Garbage Collection Strategies
+
+JavaScript uses several strategies to manage memory effectively. Here are three key concepts: **Generational Collection**, **Incremental Collection**, and **Idle-Time Collection**.
+
+## 1. Generational Collection
+
+### Concept
+- Objects in JavaScript are divided into two groups based on their lifespan: **young** (new) objects and **old** (surviving) objects.
+  
+### How It Works
+- Most objects are short-lived: they are created, used, and discarded quickly.
+- The garbage collector focuses on the **young** generation, frequently checking and collecting these objects.
+- Objects that survive multiple garbage collection cycles are promoted to the **old** generation and are checked less often.
+
+### Benefits
+- This method improves efficiency by minimizing the time spent checking objects that are less likely to be collected.
+
+### Example
+- A temporary variable in a function is collected quickly, while a long-lived object (like a user session) is checked less frequently.
+
+---
+
+## 2. Incremental Collection
+
+### Concept
+- Instead of collecting all garbage at once, the garbage collector does it in smaller parts over time.
+
+### How It Works
+- If there are many objects, checking them all at once can cause noticeable delays.
+- The garbage collector divides the work into smaller tasks, performing several small collections instead of one large one.
+
+### Benefits
+- This strategy reduces pauses in program execution, allowing the application to remain responsive.
+
+### Example
+- Instead of pausing the program to collect all unused objects at once, the collector processes a few objects, then allows the program to continue running, and repeats this process.
+
+---
+
+## 3. Idle-Time Collection
+
+### Concept
+- The garbage collector runs during periods when the CPU is not busy.
+
+### How It Works
+- It detects when the application is idle (not processing user inputs) and performs garbage collection at those times.
+
+### Benefits
+- This approach minimizes the impact on user experience, as it reduces the chances of the application freezing or slowing down during important tasks.
+
+### Example
+- When a user stops interacting with the application for a moment, the garbage collector can run in the background to free up memory without affecting performance.
+
+---
+
+## Conclusion
+
+These garbage collection strategies help JavaScript manage memory efficiently, keeping applications responsive and preventing memory leaks. Understanding these concepts can aid in writing better-performing code.
