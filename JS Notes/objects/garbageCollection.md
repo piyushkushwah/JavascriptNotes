@@ -32,7 +32,7 @@ var family = marry(
 );
 ```
 After execution, the family object looks like this:
-
+```javascript
 family = {
     father: {
         name: 'John',
@@ -47,22 +47,26 @@ family = {
         }
     }
 };
+```
 
 Removing References:
 
 To demonstrate how reachability affects garbage collection, we can remove references to the father and husband:
 
-
-// Remove references from family and mother object
+Remove references from family and mother object
+```javascript
 delete family.father;
 delete family.mother.husband;
+```
 
-// Now, redefine family to only include mother
+Now, redefine family to only include mother
+```javascript
 family = {
     mother: {
         name: 'Ann'
     }
 };
+```
 
 Conclusion
 
