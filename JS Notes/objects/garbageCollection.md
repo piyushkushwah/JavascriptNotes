@@ -73,3 +73,37 @@ family = {
 After removing the references to father and mother.husband, these objects are now unreachable.
 As a result, they become eligible for garbage collection.
 The garbage collector will eventually reclaim the memory used by these unreachable objects, keeping the memory usage efficient.
+
+# Mark-and-Sweep Garbage Collection
+
+The **mark-and-sweep** algorithm is a way for JavaScript to clean up memory by removing objects that are no longer needed. It has two main steps: **marking** and **sweeping**.
+
+## Steps of the Mark-and-Sweep Algorithm
+
+### 1. Mark Phase
+- **Start with Roots**: The garbage collector begins with root objects, like global variables and active functions.
+- **Mark Reachable Objects**: It looks at everything that can be reached from these roots and marks those objects as "in use."
+
+### 2. Sweep Phase
+- **Scan All Objects**: After marking, the collector goes through all objects in memory.
+- **Collect Unreachable Objects**: Any object that wasn’t marked is considered unreachable and is cleaned up, freeing its memory.
+
+### 3. Resetting Marks
+- Once the sweep is done, all marks are reset for the next time garbage collection runs.
+
+## Example Workflow
+1. **Identify Roots**: Start with the main variables and active functions.
+2. **Mark**: Mark all reachable objects from these roots.
+3. **Sweep**: Remove any objects that were not marked.
+
+## Benefits
+- **Easy to Understand**: The algorithm is simple and effective for finding unused memory.
+- **Cleans Up Unreachable Objects**: It helps prevent memory leaks by getting rid of objects that are no longer needed.
+
+## Limitations
+- **Pause in Execution**: During garbage collection, the program may temporarily pause.
+- **Fragmented Memory**: This method can sometimes leave small gaps in memory, making it less efficient.
+
+## Conclusion
+The mark-and-sweep algorithm is an important part of how JavaScript manages memory, helping to keep applications running smoothly by cleaning up unused objects.
+
