@@ -66,4 +66,4 @@ family = {
 
 Conclusion
 
-After removing the references to father and mother.husband, these objects are now unreachable. As a result, they become eligible for garbage collection. The garbage collector will eventually reclaim the memory used by these unreachable objects, keeping the memory usage efficient.
+After removing the references to father and mother.husband, these objects are now unreachable. As a result, they become eligible for garbage collection.<br> The garbage collector will eventually reclaim the memory used by these unreachable objects, keeping the memory usage efficient.
