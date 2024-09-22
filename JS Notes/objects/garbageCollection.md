@@ -68,7 +68,7 @@ family = {
 };
 ```
 
-Conclusion
+## Conclusion
 
 After removing the references to father and mother.husband, these objects are now unreachable.
 As a result, they become eligible for garbage collection.
