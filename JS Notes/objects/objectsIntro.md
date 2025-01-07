@@ -23,6 +23,7 @@ Objects can be created using either:
   - Do not contain special characters or spaces.
 - Example:
   ```javascript
+  user.firstname = 'Piyush'; // Valid
   user.$age = 20;    // Valid
   user._address = "20, New York"; // Valid
   console.log(user); // { firstname: 'Piyush', lastname: 'Kushwaha', $age: 20, _address: '20, New York' }
