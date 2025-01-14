@@ -103,7 +103,3 @@ user2?.admin = 'John'; // SyntaxError: Invalid left-hand side in assignment
 
 3. **Performance**:
    - Slightly slower than direct property access due to the safety checks but negligible for most use cases.
-
----
-
-This cheat sheet concisely explains optional chaining and highlights its practical applications and limitations. Let me know if you'd like further clarification or additional examples!
